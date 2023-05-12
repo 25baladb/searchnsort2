@@ -100,7 +100,19 @@ public class Main extends PApplet {
         int yY = 58;
         int xX = 45;
         for(int i = 0; i < list.size(); i++){
-            fill(82, 175, 204);
+            if(i < 13){
+                fill(82, 175, 204);
+            } else if(i < 19){
+                fill(82, 131, 204);
+            } else if( i < 26){
+                fill(45, 100, 181);
+            } else if (i < 34){
+                fill(45, 68, 181);
+            } else if(i < 44){
+                fill(26, 44, 135);
+            }else{
+                fill(12, 25, 89);
+            }
             rect(x, y, s, s);
             x += 99;
             fill(0);
@@ -132,7 +144,7 @@ public class Main extends PApplet {
         int B = (int)(Math.random() * 135) + 120;
         while(b < 996){
             textSize(100);
-            fill(40, 20, B);
+            fill(30, 20, B);
             text("~", b, 500);
             text("~", b, 480);
             text("~", b, 460);
@@ -157,14 +169,16 @@ public class Main extends PApplet {
                 foundTarget();
             } else if (targetN > list.get(mid).getDepth()) {
                 bottom = mid + 1;
+                playGame();
                 textSize(40);
                 fill(255);
-                text("Too shallow...", 420, 70);
+                text(list.get(mid).getAnimal() + " are too shallow...", 300, 70);
             } else if (targetN < list.get(mid).getDepth()){
                 top = mid - 1;
+                playGame();
                 textSize(40);
                 fill(255);
-                text("Too deep...", 420, 460);
+                text(list.get(mid).getAnimal() + " are too deep...", 300, 460);
             }
         }
         return -1;
