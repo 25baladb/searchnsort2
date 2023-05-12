@@ -1,10 +1,7 @@
 import processing.core.PApplet;
 import processing.data.Table;
 import processing.data.TableRow;
-import java.util.Random;
 import java.util.ArrayList;
-import java.util.Arrays;
-//dhsglhkfahsdkfj
 
 
 public class Main extends PApplet {
